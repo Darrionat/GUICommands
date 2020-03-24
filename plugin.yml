@@ -1,0 +1,8 @@
+name: GUICommands
+main: me.Arcator.GUICommands.Main
+description: A way to execute commands with a GUI
+version: 1.6.2
+api-version: 1.13
+
+commands:
+  guicommands:

@@ -1,0 +1,121 @@
+##########################################################################
+#  ____ _   _ ___    ____                                          _     #
+# / ___| | | |_ _|  / ___|___  _ __ ___  _ __ ___   __ _ _ __   __| |___ #
+#| |  _| | | || |  | |   / _ \| '_ ` _ \| '_ ` _ \ / _` | '_ \ / _` / __|#
+#| |_| | |_| || |  | |__| (_) | | | | | | | | | | | (_| | | | | (_| \__ \#
+# \____|\___/|___|  \____\___/|_| |_| |_|_| |_| |_|\__,_|_| |_|\__,_|___/#                                                                      
+# ____          ____                  _                                  #
+#| __ ) _   _  |  _ \  __ _ _ __ _ __(_) ___  _ __                       #
+#|  _ \| | | | | | | |/ _` | '__| '__| |/ _ \| '_ \                      #
+#| |_) | |_| | | |_| | (_| | |  | |  | | (_) | | | |                     #
+#|____/ \__, | |____/ \__,_|_|  |_|  |_|\___/|_| |_|                     #
+#       |___/                                                            #    
+##########################################################################
+
+## For support on this plugin or any others created by Darrion, please join my Discord
+##  https://discord.gg/xNKrH5Z
+
+
+GUIName: 'Gui Commands' # What will show at the top of the GUI.
+GUICommand: '/opengui' # A command to open the GUI. You need the /
+GUICloseCommand: '/closegui' # Useful for making an item close the GUI. You need the /
+GUIRows: 6 # 1 is min. 6 is the max. Making less/more might break the plugin.
+KeepOpen: true # This is if the GUI will close when a player clicks on something\
+# The fill item will replace all empty slots with a certain item
+# If you don't want a fill item, just make it 'AIR'
+FillItemType: 'GRAY_STAINED_GLASS_PANE'
+FillItemByteId: 0 #Only needed in <1.13, if not, make it 0.
+
+## Custom Join Item, such as a server navigator compass!
+## If a player right-clicks with this item, it'll open the GUI.
+GUIItemOnLogin: true
+GUIItemType: 'COMPASS' # Use all caps, make sure it's a valid item type. 
+GUIItemLore: '' # 
+GUIItemName: '&eServer Selector'
+GUIItemSlot: 5
+PlayerCanMoveItem: false # Can move the item in their inventory, still can move if in creative.
+PlayerCanDropItem: false # Can drop the item on the ground
+PlayerDropItemOnDeath: false #Drops the item on death, if false, the player will respawn with the item.
+
+## id: It must be capitalized and in '' Make sure it's the name, not the ID number. (Required)
+## qty: the amount of blocks in that slot (Required)
+## name: Add a custom name to the item, works with color codes. Put in '' (Optional)
+## lore: Add a custom lore to the item, works with color codes. Put in '' (Optional)
+## command: the command that will be executed when a player clicks on the item. Put in '' You don't need a / (Required)
+## view-permission: Permission to see the item, leave '' empty if you don't want a permission. (Optional)
+## click-permission: Permission to click the item, leave '' empty if you don't want a permission. (Optional)
+## click-no-permission-message: Message for when a player clicks but doesn't have the permission click-permission (Optional)
+
+## Don't delete any lines in your item, so always have it like this.
+## 23: # This is the slot number.
+##         id: 'DIAMOND_ORE'
+##         byteid: 1 (Only needed in 1.12, for something like red_wool. Leave 0 if you don't need it) If you're in 1.13/1.14 just leave as 0
+##         qty: 32
+##         name: ''
+##         lore: ''
+##         command: 'say one'
+##         view-permission: 'test.test'
+##         click-permission: 'click.permission'
+##         click-no-permission-message: 'You dont have that permission'
+## Deleting any of the options will throw you an error in console. If you don't want an option, just leave '' empty.
+GUI:
+    14: # This is the slot number.
+        id: 'CHEST'
+        byteid: 0
+        qty: 1
+        name: '&eGUI Commands'
+        lore: '&aA plugin for making GUIs that execute commands on click'
+        command: 'say one'
+        view-permission: 'view.chest'
+        click-permission: 'click.permission'
+        click-no-permission-message: '&cYou dont have that permission'
+    29: # This is the slot number.
+        id: 'BOW'
+        byteid: 0
+        qty: 1
+        name: '&cBowPVP'
+        lore: ''
+        command: 'warp bowpvp'
+        view-permission: 'view.bowpvp'
+        click-permission: 'click.permission'
+        click-no-permission-message: '&cYou dont have that permission'
+    31: # This is the slot number.
+        id: 'DIAMOND_SWORD'
+        byteid: 0
+        qty: 1
+        name: '&cKitPvP'
+        lore: ''
+        command: 'warp kitpvp'
+        view-permission: 'view.kitpvp'
+        click-permission: 'click.permission'
+        click-no-permission-message: '&cYou dont have that permission'
+    33: # This is the slot number.
+        id: 'DIAMOND_CHESTPLATE'
+        byteid: 0
+        qty: 1
+        name: '&bArmory'
+        lore: ''
+        command: 'warp armory'
+        view-permission: 'view.armory'
+        click-permission: 'click.permission'
+        click-no-permission-message: '&cYou dont have that permission'
+    35: # This is the slot number.
+        id: 'ENCHANTED_GOLDEN_APPLE' # GOLDEN_APPLE in 1.12
+        byteid: 0      # 1 in 1.12
+        qty: 1
+        name: '&eFood'
+        lore: ''
+        command: 'warp food'
+        view-permission: ''
+        click-permission: ''
+        click-no-permission-message: 'You can leave the permissions empty for no perm required.'
+    50:
+        id: 'BARRIER'
+        byteid: 
+        qty: 1
+        name: '&4Close GUI'
+        lore: '&8A way to leave the menu.'
+        command: 'closegui' # This is the same command as the one at the top of the config, to close the gui.
+        view-permission: 'custom.permission'
+        click-permission: 'click.permission'
+        click-no-permission-message: '&cYou dont have that permission'

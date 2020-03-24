@@ -1,0 +1,6 @@
+Name: "&cExample GUI"
+OpenCommand: "/example"
+Rows: 4
+#A fill item is an item that fills all empty slots in the inventory
+FillItemEnabled: true
+FillItemID: BLACK_STAINED_GLASS_PANE
